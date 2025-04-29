@@ -1,0 +1,221 @@
+:root {
+  --light-red: hsl(0, 100%, 67%, 0.1);
+  --orangey-yellow: hsl(39, 100%, 56%, 0.1);
+  --green-teal: hsl(166, 100%, 37%, 0.1);
+  --cobalt-blue: hsl(234, 85%, 45%, 0.1);
+  
+  --light-red-text: hsl(0, 100%, 67%);
+  --orangey-yellow-text: hsl(39, 100%, 56%);
+  --green-teal-text: hsl(166, 100%, 37%);
+  --cobalt-blue-text: #5d3efb(234, 85%, 45%);
+  
+  --white: hsl(0, 0%, 100%);
+  --pale-blue: hsl(221, 100%, 96%);
+  --light-lavender: hsl(241, 100%, 89%);
+  --dark-gray-blue: hsl(224, 30%, 27%);
+  
+  --background-gradient: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+  --circle-gradient: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--pale-blue);
+}
+
+.card {
+  display: flex;
+  max-width: 700px;
+  background-color: var(--white);
+  border-radius: 25px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.result-section {
+  flex: 1;
+  background: var(--background-gradient);
+  color: var(--light-lavender);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result-title {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: var(--light-lavender);
+}
+
+.score-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: var(--circle-gradient);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.score {
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--white);
+}
+
+.total-score {
+  color: hsl(241, 100%, 89%, 0.7);
+}
+
+.rating {
+  font-size: 1.7rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.description {
+  color: var(--light-lavender);
+  max-width: 250px;
+}
+
+.summary-section {
+  flex: 1;
+  padding: 2rem;
+}
+
+.summary-title {
+  font-size: 1.3rem;
+  color: var(--dark-gray-blue);
+  margin-bottom: 1.5rem;
+}
+
+.category {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.category-name {
+  display: flex;
+  align-items: center;
+}
+
+.category-name img {
+  margin-right: 0.5rem;
+}
+
+.category-score {
+  color: var(--dark-gray-blue);
+  font-weight: bold;
+}
+
+.category-score span {
+  color: hsl(224, 30%, 27%, 0.5);
+}
+
+.reaction {
+  background-color: var(--light-red);
+  color: var(--light-red-text);
+}
+
+.memory {
+  background-color: var(--orangey-yellow);
+  color: var(--orangey-yellow-text);
+}
+
+.verbal {
+  background-color: var(--green-teal);
+  color: var(--green-teal-text);
+}
+
+.visual {
+  background-color: var(--cobalt-blue);
+  color: var(--cobalt-blue-text);
+}
+
+.continue-btn {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 50px;
+  background-color: var(--dark-gray-blue);
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.continue-btn:hover {
+  background: var(--background-gradient);
+}
+
+/* Mobile styles */
+@media (max-width: 650px) {
+  .card {
+      flex-direction: column;
+      max-width: 100%;
+      border-radius: 0;
+  }
+  
+  .result-section {
+      border-radius: 0 0 25px 25px;
+  }
+  
+  .score-circle {
+      width: 150px;
+      height: 150px;
+  }
+  
+  .description {
+      max-width: 100%;
+      padding: 0 1rem;
+  }
+}
+
+/* Emoji styles for mobile */
+@media (max-width: 480px) {
+  .category-name img {
+      display: none;
+  }
+  
+  .category-name::before {
+      content: "";
+      margin-right: 0.5rem;
+      font-size: 1.2rem;
+  }
+  
+  .reaction .category-name::before {
+      content: "✔";
+  }
+  
+  .memory .category-name::before {
+      content: "👍";
+  }
+  
+  .verbal .category-name::before {
+      content: "👍";
+  }
+  
+  .visual .category-name::before {
+      content: "😎";
+  }
+} 
