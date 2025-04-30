@@ -191,31 +191,20 @@ body {
   }
 }
 
-/* Emoji styles for mobile */
-@media (max-width: 480px) {
-  .category-name img {
-      display: none;
-  }
-  
-  .category-name::before {
-      content: "";
-      margin-right: 0.5rem;
-      font-size: 1.2rem;
-  }
-  
-  .reaction .category-name::before {
-      content: "✔";
-  }
-  
-  .memory .category-name::before {
-      content: "👍";
-  }
-  
-  .verbal .category-name::before {
-      content: "👍";
-  }
-  
-  .visual .category-name::before {
-      content: "😎";
-  }
-} 
+/* Remove emoji styles and always show image */
+.category-name img {
+  display: inline-block;
+}
+
+.category-name::before {
+  content: "";
+  margin-right: 0;
+  font-size: 0;
+}
+
+.reaction .category-name::before,
+.memory .category-name::before,
+.verbal .category-name::before,
+.visual .category-name::before {
+  content: "";
+}
